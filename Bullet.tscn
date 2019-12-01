@@ -26,6 +26,8 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+speed = 300
+duration = 1.5
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

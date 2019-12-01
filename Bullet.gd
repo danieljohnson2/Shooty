@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-var speed = 300
-var duration = 1.5
+export var speed = 300
+export var duration = 1.5
 
 
 func _process(delta):

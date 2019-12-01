@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 var speed = 200
 var directions = {
@@ -6,6 +6,7 @@ var directions = {
 	"ui_left": Vector2(-1,0),
 	"ui_up": Vector2(0,-1),
 	"ui_down": Vector2(0,1) }
+	
 onready var bulletTemplate = preload("res://Bullet.tscn")
 
 func _ready():
@@ -29,3 +30,8 @@ func _process(delta):
 		bullet.position = self.position
 		bullet.position.y -= 10
 		get_parent().add_child(bullet)
+
+func _on_Player_body_entered(body):
+	if body.is_in_group("Bullet"):
+		body.queue_free()
+		self.queue_free()
