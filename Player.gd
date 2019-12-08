@@ -6,7 +6,7 @@ var directions = {
 	"ui_left": Vector2(-1,0),
 	"ui_up": Vector2(0,-1),
 	"ui_down": Vector2(0,1) }
-	
+
 onready var bulletTemplate = preload("res://Bullet.tscn")
 
 func _ready():
