@@ -28,10 +28,5 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_select"):
 		var bullet = bulletTemplate.instance()
 		bullet.position = self.position
-		bullet.position.y -= 10
+		bullet.position.y -= 20
 		get_parent().add_child(bullet)
-
-func _on_Player_body_entered(body):
-	if body.is_in_group("Bullet"):
-		body.queue_free()
-		self.queue_free()

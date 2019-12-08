@@ -17,8 +17,8 @@ bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 1
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -39,5 +39,7 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -1.14563, 4.08378, -1.06541, -4.26165, 1.16272, -4.14933, 1.00883, 4.08378 )
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 
 

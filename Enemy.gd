@@ -22,8 +22,3 @@ func _process(delta):
 		bullet.duration = 2
 		bullet.speed = -200
 		get_parent().add_child(bullet)
-	
-func _on_Enemy_body_entered(body):
-	if body.is_in_group("Bullet"):
-		body.queue_free()
-		self.queue_free()
