@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player.png" type="Texture" id=2]
-[ext_resource path="res://Enemy.gd" type="Script" id=3]
-[ext_resource path="res://Enemy.png" type="Texture" id=4]
-
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 10.0
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -46,39 +40,84 @@ _sections_unfolded = [ "Material", "Transform" ]
 build_mode = 0
 polygon = PoolVector2Array( -11.7374, 14.0657, 0.0790329, -13.4413, 11.7017, 13.872 )
 
-[node name="Enemy" type="RigidBody2D" parent="." index="1"]
+[node name="Enemy 1" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 469.255, 147.555 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 3
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 1
-contact_monitor = true
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 3 )
+position = Vector2( 938.366, 84.0667 )
 
-[node name="Sprite" type="Sprite" parent="Enemy" index="0"]
+[node name="Enemy 8" parent="." index="2" instance=ExtResource( 3 )]
 
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 823.274, 78.7022 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
+[node name="Enemy 10" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( -0.0094564, 0.143933 )
-scale = Vector2( 1.31972, 1.30984 )
-shape = SubResource( 1 )
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 15" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 619.426, 68.4611 )
+
+[node name="Enemy 17" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 540.423, 62.609 )
+
+[node name="Enemy 2" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 5" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 11" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 671.675, 126.382 )
+
+[node name="Enemy 14" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 574.14, 119.067 )
+
+[node name="Enemy 19" parent="." index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 495.137, 113.215 )
+
+[node name="Enemy 3" parent="." index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 6" parent="." index="12" instance=ExtResource( 3 )]
+
+position = Vector2( 728.49, 186.099 )
+
+[node name="Enemy 12" parent="." index="13" instance=ExtResource( 3 )]
+
+position = Vector2( 622.177, 183.173 )
+
+[node name="Enemy 13" parent="." index="14" instance=ExtResource( 3 )]
+
+position = Vector2( 524.642, 175.857 )
+
+[node name="Enemy 20" parent="." index="15" instance=ExtResource( 3 )]
+
+position = Vector2( 445.639, 170.005 )
+
+[node name="Enemy 4" parent="." index="16" instance=ExtResource( 3 )]
+
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 7" parent="." index="17" instance=ExtResource( 3 )]
+
+position = Vector2( 679.469, 238.001 )
+
+[node name="Enemy 9" parent="." index="18" instance=ExtResource( 3 )]
+
+position = Vector2( 573.156, 235.075 )
+
+[node name="Enemy 16" parent="." index="19" instance=ExtResource( 3 )]
+
+position = Vector2( 475.621, 227.76 )
+
+[node name="Enemy 18" parent="." index="20" instance=ExtResource( 3 )]
+
+position = Vector2( 396.617, 221.908 )
 
 
