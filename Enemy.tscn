@@ -8,7 +8,9 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Enemy" type="RigidBody2D" index="0"]
+[node name="Enemy" type="RigidBody2D" index="0" groups=[
+"Enemy",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -30,6 +32,9 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+left = 100
+right = 900
+shot_time = 0.5
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
