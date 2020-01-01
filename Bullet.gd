@@ -2,6 +2,8 @@ extends RigidBody2D
 
 export var duration = 1.5
 
+var movement = Vector2(0, 0)
+
 var explodyness = 0
 const max_explodyness = 1.5
 
@@ -10,17 +12,15 @@ func shoot_at(global_target, shooter, offset, speed):
 	# to shoot at 'global target', startin at 'shooter' but offset
 	# by 'offset' so we don't hit the shooter
 	
-	self.position = shooter.position
+	var angle = shooter.rotation + shooter.get_angle_to(global_target) - PI/2
 	shooter.get_parent().add_child(self)
-		
-	var angle = self.get_angle_to(global_target) - PI/2
-	self.rotation += angle
-	self.position += Vector2(0, offset).rotated(angle)
-	self.linear_velocity = Vector2(0, speed).rotated(angle)
+	self.rotation = angle
+	self.position = shooter.position + Vector2(0, offset).rotated(angle)
+	self.movement = Vector2(0, speed).rotated(angle)
 
 func _process(delta):
-	self.angular_velocity = 0 # no tumbling
-
+	self.position += movement * delta
+	
 	# Handle exposion
 	if explodyness > max_explodyness:
 		self.queue_free()
