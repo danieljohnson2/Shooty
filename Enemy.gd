@@ -21,6 +21,8 @@ func _process(delta):
 	shot_time_remaining -= delta
 	if shot_time_remaining <= 0:
 		shot_time_remaining = shot_time
-		var bullet = bulletTemplate.instance()
-		bullet.duration = 2
-		bullet.shoot_at(self.position + Vector2(0, 100), self, 20, 400)
+		
+		for target in get_tree().get_nodes_in_group("Player"):
+			var bullet = bulletTemplate.instance()
+			bullet.duration = 2
+			bullet.shoot_at(target.global_position, self, 20, 400)
