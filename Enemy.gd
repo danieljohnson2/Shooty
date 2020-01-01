@@ -22,7 +22,5 @@ func _process(delta):
 	if shot_time_remaining <= 0:
 		shot_time_remaining = shot_time
 		var bullet = bulletTemplate.instance()
-		bullet.position = self.position + Vector2(0, 20)
 		bullet.duration = 2
-		bullet.speed = -200
-		get_parent().add_child(bullet)
+		bullet.shoot_at(self.position + Vector2(0, 100), self, 20, 400)

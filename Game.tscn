@@ -5,7 +5,7 @@
 [ext_resource path="res://Player.png" type="Texture" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -33,6 +33,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 speed = 200
 
 [node name="Sprite" type="Sprite" parent="Player" index="0"]

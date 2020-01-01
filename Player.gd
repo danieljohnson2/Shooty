@@ -16,10 +16,8 @@ func _process(delta):
 		if Input.is_action_pressed(action):
 			movement += directions[action]
 	self.position += movement * delta * speed
-	
+	self.rotation += self.get_angle_to(get_global_mouse_position()) + PI/2
+		
 	if Input.is_action_just_pressed("ui_shoot"):
 		var bullet = bulletTemplate.instance()
-		bullet.position = self.position
-		# Spawn bullets off the player, as if they touch the player dies
-		bullet.position.y -= 20
-		get_parent().add_child(bullet)
+		bullet.shoot_at(get_global_mouse_position(), self, 30, 400)
