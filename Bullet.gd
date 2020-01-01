@@ -18,7 +18,6 @@ func shoot_at(global_target, shooter, offset, speed):
 	self.position += Vector2(0, offset).rotated(angle)
 	self.linear_velocity = Vector2(0, speed).rotated(angle)
 
-
 func _process(delta):
 	self.angular_velocity = 0 # no tumbling
 
