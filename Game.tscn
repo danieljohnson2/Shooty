@@ -11,7 +11,9 @@
 
 script = ExtResource( 1 )
 
-[node name="Background" type="Sprite" parent="." index="0"]
+[node name="Background" type="Sprite" parent="." index="0" groups=[
+"On Paper",
+]]
 
 modulate = Color( 1, 1, 1, 0.386745 )
 scale = Vector2( 8, 8 )
@@ -26,6 +28,7 @@ _sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
 speed = 40
 
 [node name="Player" type="RigidBody2D" parent="." index="1" groups=[
+"On Paper",
 "Player",
 ]]
 
