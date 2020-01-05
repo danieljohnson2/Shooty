@@ -2,6 +2,8 @@ extends Sprite
 
 export var speed = 40
 
+onready var boomTemplate = preload("res://Boom.tscn")
+
 func _process(delta):
 	# These things are 'part of the paper' and move downwards with it
 	var on_paper = self.get_tree().get_nodes_in_group("On Paper")
@@ -17,3 +19,9 @@ func _process(delta):
 	for n in on_paper:
 		if n.position.y > 620:
 			n.queue_free()
+			
+			# Add an exposion effect
+			var boom = boomTemplate.instance()
+			boom.movement = Vector2(0, -100)
+			boom.position = n.position
+			self.get_parent().add_child(boom)

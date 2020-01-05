@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Boom.gd" type="Script" id=1]
+[ext_resource path="res://Boom.png" type="Texture" id=2]
+
+[node name="Boom" type="Node2D" index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+
