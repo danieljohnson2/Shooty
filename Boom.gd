@@ -5,5 +5,5 @@ func _on_Boom_body_entered(body):
 		body.queue_free()
 		
 	if body.is_in_group("Enemy"):
-		body.position.y = -100
+		body.queue_free()
 		$"../Background".speed += 1
