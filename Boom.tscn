@@ -1,17 +1,21 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Boom.gd" type="Script" id=1]
-[ext_resource path="res://Boom.png" type="Texture" id=2]
+[ext_resource path="res://Enemy.png" type="Texture" id=2]
 
-[node name="Boom" type="Node2D" index="0"]
-
+[node name="Boom" type="RigidBody2D" groups=[
+"On Paper",
+]]
 scale = Vector2( 0.1, 0.1 )
+mode = 3
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -205.94, -7.36801, -132.073, -158.796, 5.31982, -201.639, 147.884, -155.102, 212.148, 5.92808, 130.155, 167.697, -0.589523, 212.756, -160.881, 130.025 )
+[connection signal="body_entered" from="." to="." method="_on_Boom_body_entered"]

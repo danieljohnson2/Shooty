@@ -1,6 +1,6 @@
 extends Sprite
 
-export var speed = 40
+export var speed = 1
 
 onready var boomTemplate = preload("res://Boom.tscn")
 
@@ -20,8 +20,7 @@ func _process(delta):
 		if n.position.y > 620:
 			n.queue_free()
 			
-			# Add an exposion effect
+			# Add an explosion effect
 			var boom = boomTemplate.instance()
-			boom.movement = Vector2(0, -100)
 			boom.position = n.position
 			self.get_parent().add_child(boom)

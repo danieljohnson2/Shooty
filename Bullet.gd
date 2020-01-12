@@ -26,6 +26,5 @@ func _on_Bullet_body_entered(body):
 	# but show an explosion
 	var boomTemplate = preload("res://Boom.tscn")
 	var boom = boomTemplate.instance()
-	boom.movement = self.movement
 	boom.position = self.position
 	self.get_parent().add_child(boom)

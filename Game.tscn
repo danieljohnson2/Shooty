@@ -24,10 +24,10 @@ region_filter_clip = true
 script = ExtResource( 3 )
 
 [node name="Player" type="RigidBody2D" parent="." groups=[
-"On Paper",
 "Player",
+"Destroyable",
 ]]
-position = Vector2( 50, 500 )
+position = Vector2( 467, 554 )
 mode = 3
 script = ExtResource( 4 )
 
