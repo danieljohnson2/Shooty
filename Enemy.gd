@@ -18,5 +18,4 @@ func _process(delta):
 	
 
 func _on_Enemy_body_entered(body):
-	if body.is_in_group("Player"):
-		body.queue_free()
+	pass

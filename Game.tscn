@@ -29,6 +29,8 @@ script = ExtResource( 3 )
 ]]
 position = Vector2( 467, 554 )
 mode = 3
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
@@ -37,9 +39,6 @@ texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PoolVector2Array( -11.7374, 14.0657, 0.0790329, -13.4413, 11.7017, 13.872 )
-
-[node name="Enemy 1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 938.366, 84.0667 )
 
 [node name="Enemy 8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 823.274, 78.7022 )
@@ -97,3 +96,4 @@ position = Vector2( 475.621, 227.76 )
 
 [node name="Enemy 18" parent="." instance=ExtResource( 6 )]
 position = Vector2( 396.617, 221.908 )
+[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]

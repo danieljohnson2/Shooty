@@ -7,7 +7,6 @@
 
 [node name="Enemy" type="RigidBody2D" groups=[
 "Enemy",
-"On Paper",
 "Destroyable",
 ]]
 mode = 3

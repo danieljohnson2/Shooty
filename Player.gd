@@ -16,3 +16,7 @@ func _process(delta):
 		var boom = boomTemplate.instance()
 		boom.global_position = get_global_mouse_position()
 		self.get_parent().add_child(boom)
+
+func _on_Player_body_entered(body):
+	if body.is_in_group("Enemy"):
+		self.queue_free()
