@@ -26,14 +26,11 @@ region_rect = Rect2( 0, 0, 200, 100 )
 region_filter_clip = true
 script = ExtResource( 3 )
 
-[node name="Player" type="RigidBody2D" parent="." groups=[
-"Player",
+[node name="Player" type="Area2D" parent="." groups=[
 "Destroyable",
+"Player",
 ]]
 position = Vector2( 467, 554 )
-mode = 3
-contacts_reported = 1
-contact_monitor = true
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
