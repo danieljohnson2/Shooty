@@ -3,6 +3,7 @@ extends RigidBody2D
 export var duration = 1.5
 
 var movement = Vector2(0, 0)
+var holeTemplate = preload("res://Hole.tscn")
 
 func shoot_at(global_target, shooter, offset, speed):
 	# Adds this bullet to the scene with rotation, position and speed
@@ -24,7 +25,6 @@ func _on_Bullet_body_entered(body):
 	self.queue_free()
 
 	# but show an explosion
-	var boomTemplate = preload("res://Boom.tscn")
-	var boom = boomTemplate.instance()
-	boom.position = self.position
-	self.get_parent().add_child(boom)
+	var hole = holeTemplate.instance()
+	hole.position = self.position
+	self.get_parent().add_child(hole)

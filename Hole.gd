@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends Area2D
 
-func _on_Boom_body_entered(body):
+func _on_Hole_body_entered(body):
 	if body.is_in_group("Player"):
 		body.queue_free()
 		
