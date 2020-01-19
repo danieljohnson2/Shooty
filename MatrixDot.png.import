@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boom.png-111b00cd9452b2eb104db9df05a6b3ac.stex"
+path="res://.import/MatrixDot.png-a1b9ce6007da7a08ff6361f584bdc8ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Boom.png"
-dest_files=[ "res://.import/Boom.png-111b00cd9452b2eb104db9df05a6b3ac.stex" ]
+source_file="res://MatrixDot.png"
+dest_files=[ "res://.import/MatrixDot.png-a1b9ce6007da7a08ff6361f584bdc8ca.stex" ]
 
 [params]
 
