@@ -27,8 +27,8 @@ region_filter_clip = true
 script = ExtResource( 3 )
 
 [node name="Player" type="Area2D" parent="." groups=[
-"Player",
 "Destroyable",
+"Player",
 ]]
 position = Vector2( 467, 554 )
 script = ExtResource( 4 )

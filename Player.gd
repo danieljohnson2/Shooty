@@ -1,17 +1,9 @@
 extends Area2D
 
-export var speed = 200
-
 var right_angle = PI/2
 var deadzone_angle = PI/20
 
 onready var holeTemplate = preload("res://Hole.tscn")
-
-func shrink(amount):
-	var scale = self.scale.x
-	scale += amount
-	self.scale = Vector2(scale, scale)
-	return scale	
 	
 func _process(delta):
 	var rot = get_global_mouse_position().angle_to_point(self.global_position) + PI/2
