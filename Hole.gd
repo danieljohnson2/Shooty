@@ -1,7 +1,6 @@
 extends Area2D
 
 export var growth_speed = 0.25
-var enemy = preload("res://Enemy.gd")
 
 var falling_in = []
 
@@ -15,22 +14,7 @@ func _process(delta):
 	rotation = (1 - expansion) * PI/2
 	
 	for n in falling_in:
-		if not is_instance_valid(n):
-			continue
-			
-		var new_scale = 0
-		if n is enemy:
-			new_scale = n.shrink(-1 * delta)
-		else:
-			new_scale = n.scale.x - delta
-			n.scale = Vector2(new_scale, new_scale)
-	
-		if new_scale < 0.01:
-			falling_in.erase(n)
-			n.queue_free()
-		elif self.position != n.position:
-			var x = (self.position - n.position).normalized()
-			n.position += x * 100 * delta
+		if is_instance_valid(n): fall_in(n, delta)
 
 func _on_Hole_body_entered(body):
 	if body.is_in_group("Enemy") and not body in falling_in:
@@ -40,3 +24,23 @@ func _on_Hole_body_entered(body):
 func _on_Hole_area_entered(area):
 	if area.is_in_group("Player") and not area in falling_in:
 		falling_in.append(area)
+
+func fall_in(victim, delta):
+	# Shrinks the victim and moves it towards the hole;
+	# removes it when small enough.
+	var sprite = victim.get_node("Sprite")
+	
+	if sprite == null:
+		# No spite? No animation- just kill it!
+		falling_in.erase(victim)
+		victim.queue_free()
+	else:		
+		sprite.scale.x = max(0, sprite.scale.x - delta)
+		sprite.scale.y = max(0, sprite.scale.y - delta)
+	
+		if sprite.scale.x < 0.01:
+			falling_in.erase(victim)
+			victim.queue_free()
+		elif self.position != victim.position:
+			var x = (self.position - victim.position).normalized()
+			victim.position += x * 100 * delta
