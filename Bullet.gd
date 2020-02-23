@@ -54,8 +54,3 @@ func find_angle(pt1, pt2):
 func _on_Bullet_body_entered(body):
 	# Destroy what the bullet hits and the bullet
 	body.queue_free()
-	
-	# but show an explosion
-	var hole = holeTemplate.instance()
-	hole.position = self.position
-	self.get_parent().add_child(hole)

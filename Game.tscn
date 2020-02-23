@@ -43,16 +43,121 @@ polygon = PoolVector2Array( -11.7374, 14.0657, 0.0790329, -13.4413, 11.7017, 13.
 [node name="Enemy 1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 716.961, 75.7762 )
 
+[node name="Enemy 36" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 28" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 35" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
+[node name="Enemy 26" parent="." instance=ExtResource( 6 )]
+position = Vector2( 716.961, 75.7762 )
+
 [node name="Enemy 2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 32" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 34" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 893.079, 134.673 )
+
+[node name="Enemy 39" parent="." instance=ExtResource( 6 )]
 position = Vector2( 893.079, 134.673 )
 
 [node name="Enemy 3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 843.581, 191.463 )
 
+[node name="Enemy 24" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 30" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
+[node name="Enemy 38" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.581, 191.463 )
+
 [node name="Enemy 4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 794.56, 243.366 )
 
+[node name="Enemy 25" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 29" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 27" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
+[node name="Enemy 40" parent="." instance=ExtResource( 6 )]
+position = Vector2( 794.56, 243.366 )
+
 [node name="Enemy 5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 23" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 31" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 33" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
+
+[node name="Enemy 37" parent="." instance=ExtResource( 6 )]
 position = Vector2( 777.988, 129.308 )
 
 [node name="Borders" type="RigidBody2D" parent="."]
