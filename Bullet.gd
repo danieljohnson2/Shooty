@@ -31,11 +31,10 @@ func _process(delta):
 			    start_position, self.global_position,
 				n.start_position, n.global_position)
 			if inter != null:
-				var arm1 = inter - start_position
-				var arm2 = inter - n.start_position
-				var angle1 = arm1.angle() - PI/2
-				var angle2 = arm2.angle() - PI/2
-				var angleResult = abs(angle1 - angle2)/2
+				var angle1 = find_angle(inter, start_position)
+				var angle2 = find_angle(inter, n.start_position)
+				var diff = angle1 - angle2
+				var angleResult = abs(diff)/2
 				if (angleResult > 0.2):
 					already_intersected.append(n)
 					var hole = holeTemplate.instance()
@@ -43,6 +42,14 @@ func _process(delta):
 					self.get_parent().add_child(hole)
 					hole.rotation = (angle1 + angle2) / 2
 					hole.scale = Vector2(angleResult, 1)
+
+func find_angle(pt1, pt2):
+	var diff
+	if pt1.y > pt2.y:
+		diff = pt1 - pt2
+	else:
+		diff = pt2 - pt1
+	return diff.angle() - PI/2
 
 func _on_Bullet_body_entered(body):
 	# Destroy what the bullet hits and the bullet
