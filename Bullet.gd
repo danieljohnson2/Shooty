@@ -26,7 +26,7 @@ func _process(delta):
 	update()
 	
 	for n in self.get_tree().get_nodes_in_group("Bullet"):
-		if n != self and not n in already_intersected:
+		if n != self and n.global_position.y < self.global_position.y and not n in already_intersected:
 			var inter = Geometry.segment_intersects_segment_2d(
 			    start_position, self.global_position,
 				n.start_position, n.global_position)
