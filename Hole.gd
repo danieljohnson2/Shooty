@@ -10,8 +10,7 @@ func _ready():
 func _process(delta):
 	var expansion = scale.x
 	expansion = min(1, expansion + growth_speed * delta)	
-	scale = Vector2(expansion, expansion)
-	rotation = (1 - expansion) * PI/2
+	#scale = Vector2(expansion, expansion)
 	
 	for n in falling_in:
 		if is_instance_valid(n): fall_in(n, delta)

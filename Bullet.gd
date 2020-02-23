@@ -18,7 +18,7 @@ func shoot_at(global_target, shooter, offset, speed):
 	start_position = self.global_position
 
 func _draw():
-	draw_line(to_local(start_position), Vector2(0, 0), Color(0, 0, 0), 2)
+	draw_line(to_local(start_position), Vector2(0, 0), Color(0, 0, 0), 1)
 	
 func _process(delta):
 	self.position += movement * delta
@@ -31,16 +31,23 @@ func _process(delta):
 			    start_position, self.global_position,
 				n.start_position, n.global_position)
 			if inter != null:
-				already_intersected.append(n)
-				var hole = holeTemplate.instance()
-				hole.global_position = inter
-				self.get_parent().add_child(hole)
+				var arm1 = inter - start_position
+				var arm2 = inter - n.start_position
+				var angle1 = arm1.angle() - PI/2
+				var angle2 = arm2.angle() - PI/2
+				var angleResult = abs(angle1 - angle2)/2
+				if (angleResult > 0.2):
+					already_intersected.append(n)
+					var hole = holeTemplate.instance()
+					hole.global_position = inter
+					self.get_parent().add_child(hole)
+					hole.rotation = (angle1 + angle2) / 2
+					hole.scale = Vector2(angleResult, 1)
 
 func _on_Bullet_body_entered(body):
 	# Destroy what the bullet hits and the bullet
 	body.queue_free()
-	self.queue_free()
-
+	
 	# but show an explosion
 	var hole = holeTemplate.instance()
 	hole.position = self.position
