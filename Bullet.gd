@@ -2,7 +2,8 @@ extends RigidBody2D
 
 var movement = Vector2(0, 0)
 var holeTemplate = preload("res://Hole.tscn")
-var start_position = Vector2(0, 0)
+export var start_position = Vector2(0, 0)
+var already_intersected = []
 
 func shoot_at(global_target, shooter, offset, speed):
 	# Adds this bullet to the scene with rotation, position and speed
@@ -23,6 +24,17 @@ func _process(delta):
 	self.position += movement * delta
 	start_position.y += $"../Background".speed * delta
 	update()
+	
+	for n in self.get_tree().get_nodes_in_group("Bullet"):
+		if n != self and not n in already_intersected:
+			var inter = Geometry.segment_intersects_segment_2d(
+			    start_position, self.global_position,
+				n.start_position, n.global_position)
+			if inter != null:
+				already_intersected.append(n)
+				var hole = holeTemplate.instance()
+				hole.global_position = inter
+				self.get_parent().add_child(hole)
 
 func _on_Bullet_body_entered(body):
 	# Destroy what the bullet hits and the bullet

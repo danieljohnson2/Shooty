@@ -40,84 +40,42 @@ texture = ExtResource( 5 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PoolVector2Array( -11.7374, 14.0657, 0.0790329, -13.4413, 11.7017, 13.872 )
 
-[node name="Enemy 8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 823.274, 78.7022 )
-
-[node name="Enemy 10" parent="." instance=ExtResource( 6 )]
+[node name="Enemy 1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 716.961, 75.7762 )
-
-[node name="Enemy 15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 619.426, 68.4611 )
-
-[node name="Enemy 17" parent="." instance=ExtResource( 6 )]
-position = Vector2( 540.423, 62.609 )
 
 [node name="Enemy 2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 893.079, 134.673 )
 
-[node name="Enemy 5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 777.988, 129.308 )
-
-[node name="Enemy 11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 671.675, 126.382 )
-
-[node name="Enemy 14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 574.14, 119.067 )
-
-[node name="Enemy 19" parent="." instance=ExtResource( 6 )]
-position = Vector2( 495.137, 113.215 )
-
 [node name="Enemy 3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 843.581, 191.463 )
-
-[node name="Enemy 6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 728.49, 186.099 )
-
-[node name="Enemy 12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 622.177, 183.173 )
-
-[node name="Enemy 13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 524.642, 175.857 )
-
-[node name="Enemy 20" parent="." instance=ExtResource( 6 )]
-position = Vector2( 445.639, 170.005 )
 
 [node name="Enemy 4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 794.56, 243.366 )
 
-[node name="Enemy 7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 679.469, 238.001 )
+[node name="Enemy 5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 777.988, 129.308 )
 
-[node name="Enemy 9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 573.156, 235.075 )
-
-[node name="Enemy 16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 475.621, 227.76 )
-
-[node name="Enemy 18" parent="." instance=ExtResource( 6 )]
-position = Vector2( 396.617, 221.908 )
-
-[node name="EnemyCollisionBoundaries" type="RigidBody2D" parent="."]
+[node name="Borders" type="RigidBody2D" parent="."]
 scale = Vector2( 8, 8 )
 mode = 3
 gravity_scale = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollisionBoundaries"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
 position = Vector2( -89.85, 49.3384 )
 scale = Vector2( 0.125, 0.125 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyCollisionBoundaries"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
 position = Vector2( 218.848, 43.2346 )
 scale = Vector2( 0.125, 0.125 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="EnemyCollisionBoundaries"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
 position = Vector2( 59.6016, 165.787 )
 scale = Vector2( 0.125, 0.125 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyCollisionBoundaries"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
 position = Vector2( 68.1665, -113.419 )
 scale = Vector2( 0.125, 0.125 )
 shape = SubResource( 1 )

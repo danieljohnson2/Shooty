@@ -1,7 +1,7 @@
 extends Node2D
 
 var spawn_delay = 0
-export var spawn_time = 1
+export var spawn_time = 150
 
 onready var matrixDotTemplate = preload("res://MatrixDot.tscn")
 
