@@ -1,9 +1,8 @@
 extends RigidBody2D
 
-export var duration = 1.5
-
 var movement = Vector2(0, 0)
 var holeTemplate = preload("res://Hole.tscn")
+var start_position = Vector2(0, 0)
 
 func shoot_at(global_target, shooter, offset, speed):
 	# Adds this bullet to the scene with rotation, position and speed
@@ -15,9 +14,15 @@ func shoot_at(global_target, shooter, offset, speed):
 	self.rotation = angle
 	self.position = shooter.position + Vector2(0, offset).rotated(angle)
 	self.movement = Vector2(0, speed).rotated(angle)
+	start_position = self.global_position
 
+func _draw():
+	draw_line(to_local(start_position), Vector2(0, 0), Color(0, 0, 0), 2)
+	
 func _process(delta):
 	self.position += movement * delta
+	start_position.y += $"../Background".speed * delta
+	update()
 
 func _on_Bullet_body_entered(body):
 	# Destroy what the bullet hits and the bullet

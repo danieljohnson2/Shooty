@@ -1,6 +1,6 @@
 extends Sprite
 
-export var speed = 1
+export var speed = 10
 
 func _process(delta):
 	# These things are 'part of the paper' and move downwards with it

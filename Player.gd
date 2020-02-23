@@ -3,7 +3,7 @@ extends Area2D
 var right_angle = PI/2
 var deadzone_angle = PI/20
 
-onready var holeTemplate = preload("res://Hole.tscn")
+onready var bulletTemplate = preload("res://Bullet.tscn")
 	
 func _process(delta):
 	var rot = get_global_mouse_position().angle_to_point(self.global_position) + PI/2
@@ -19,9 +19,10 @@ func _process(delta):
 		self.position.x += rot * delta * 200
 		
 	if Input.is_action_just_pressed("ui_shoot"):
-		var hole = holeTemplate.instance()
-		hole.global_position = get_global_mouse_position()
-		self.get_parent().add_child(hole)
+		var bullet = bulletTemplate.instance()
+		bullet.global_position = self.global_position
+		var target_position = get_global_mouse_position()
+		bullet.shoot_at(target_position, self, 20, 200)
 
 func _on_Player_body_entered(body):
 	if body.is_in_group("Enemy"):
