@@ -4,6 +4,8 @@ export var growth_speed = 0.25
 
 var falling_in = []
 
+func top_position(): return global_position.y
+
 func _ready():
 	scale = Vector2(0.125, 0.125)
 	

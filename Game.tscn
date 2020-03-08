@@ -13,9 +13,7 @@ extents = Vector2( 722.333, 721.164 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Background" type="Sprite" parent="." groups=[
-"On Paper",
-]]
+[node name="Background" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.386745 )
 scale = Vector2( 8, 8 )
 z_index = -1000
@@ -27,8 +25,8 @@ region_filter_clip = true
 script = ExtResource( 3 )
 
 [node name="Player" type="Area2D" parent="." groups=[
-"Player",
 "Destroyable",
+"Player",
 ]]
 position = Vector2( 467, 554 )
 script = ExtResource( 4 )

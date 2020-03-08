@@ -2,6 +2,8 @@ extends RigidBody2D
 
 var flocker = null
 
+func top_position(): return global_position.y
+
 func _ready():
 	self.linear_velocity = Vector2(rand_range(-100, 100),rand_range(-100, 100))
 	

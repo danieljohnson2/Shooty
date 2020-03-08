@@ -17,9 +17,13 @@ func shoot_at(global_target, shooter, offset, speed):
 	self.movement = Vector2(0, speed).rotated(angle)
 	start_position = self.global_position
 
+func top_position():
+	# Must not remove the line while either end is visible
+	return min(start_position.y, global_position.y)
+	
 func _draw():
 	draw_line(to_local(start_position), Vector2(0, 0), Color(0, 0, 0), 1)
-	
+
 func _process(delta):
 	self.position += movement * delta
 	start_position.y += $"../Background".speed * delta
@@ -31,7 +35,7 @@ func _process(delta):
 			var angle1 = find_angle(inter, start_position)
 			var angle2 = find_angle(inter, n.start_position)
 			create_hole(inter, angle1, angle2)
-
+			
 func create_hole(where, angle1, angle2):
 	# Constructs a hole at 'where', for two lines
 	# whose angles are given. We use the angles to place
@@ -44,14 +48,14 @@ func create_hole(where, angle1, angle2):
 		self.get_parent().add_child(hole)
 		
 		hole.global_position = where
-		hole.rotation = (angle1 + angle2) / 2
-		var t = tan(diff/2)
+		hole.global_rotation = (angle1 + angle2) / 2
 		
 		# This works if we scale up or down, but we want
 		# always scale down.
+		var t = tan(diff/2)
 		if t > 1: hole.scale = Vector2(1, 1/tan(diff/2))
 		else: hole.scale = Vector2(tan(diff/2), 1)
-	
+			
 func find_hole_intersection(other_bullet):
 	# Finds the place where the lines of this bullet and other_bullet intersect,
 	# but only if they aren't the same and only if other_bullet is eligable ot make

@@ -11,7 +11,9 @@ var directions = {
 	"ui_down": Vector2(0, 1) }
 	
 onready var bulletTemplate = preload("res://Bullet.tscn")
-	
+
+func top_position(): return global_position.y
+
 func _process(delta):
 	var movement = Vector2(0,0)
 	for action in directions.keys():

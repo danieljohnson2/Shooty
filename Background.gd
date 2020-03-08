@@ -9,11 +9,13 @@ func _process(delta):
 	for n in on_paper:
 		n.position.y += speed * delta
 	
+	self.position.y += speed * delta
+	
 	# The background gets reset so it never falls over the bottom
 	while self.position.y >= 0:
 		self.position.y -= self.texture.get_height() * self.scale.y
 
 	# Everyone else is not so lucky!
 	for n in on_paper:
-		if n.position.y > 620:
+		if n.top_position() > 620:
 			n.queue_free()
